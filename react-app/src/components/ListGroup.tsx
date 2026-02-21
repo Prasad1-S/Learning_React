@@ -1,21 +1,24 @@
 import { useState } from "react";
 
-function ListGroup(){
+interface Props{
+    items:string[];
+    heading:string;
+}
+function ListGroup({items, heading}: Props){
 
-    let item:string[] = ["New York", "Mumbai", "Delhi", "San Fransisco"];
     const [selectedIndex, setSelectedIndex] = useState(-1);
 
     return (
         <>
-        <h1>List</h1>
-        {item.length===0 ? <p>No item Found</p> : null}
+        <h1>{heading}</h1>
+        {items.length===0 ? <p>No item Found</p> : null}
         <ul  className="list-group">
-            {item.map((item, index)=>(
+            {items.map((items, index)=>(
                 <li 
                 className={selectedIndex === index ? 'list-group-item active' : 'list-group-item'}
-                key={item}
+                key={items}
                 onClick={()=> {setSelectedIndex(index);}}
-                >{item}
+                >{items}
                 </li>
             ))}
         </ul>
