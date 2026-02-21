@@ -1,6 +1,10 @@
 function ListGroup(){
 
-    const item:string[] = ["New York", "Mumbai", "Delhi", "San Fransisco"];
+    let item:string[] = ["New York", "Mumbai", "Delhi", "San Fransisco"];
+    item = [];
+
+    if(item.length===0)
+        return <p>No item Found</p>
     return (
         <>
         <h1>Hello World</h1>
